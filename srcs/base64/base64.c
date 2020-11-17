@@ -44,15 +44,15 @@ void			print_base64(t_ssl_des *des, char *base64)
 
 int				get_str_fd(int fd, char **line, size_t *size)
 {
-	char		buff[10];
+	char		buff[4096];
 	ssize_t		n;
 
 	if (!(*line = ft_memalloc(1)))
 		return (0);
 	*size = 0;
-	while ((n = read(fd, &buff, 10)) > 0)
+	while ((n = read(fd, &buff, 4096)) > 0)
 	{
-		if (!(*line = ft_memjoinfreefirst(*line, *size, buff, 10)))
+		if (!(*line = ft_memjoinfreefirst(*line, *size, buff, 4096)))
 			return (0);
 		*size += n;
 	}
