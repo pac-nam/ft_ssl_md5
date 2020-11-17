@@ -54,6 +54,6 @@ size_t		ft_strlenwcs(wchar_t *wcs);
 size_t		ft_wcslen(wchar_t *str);
 void		ft_strncatindex(char *buf, size_t *index, const char *str,
 												const size_t len);
-int 		ft_str_is_printable(const char *str);
+int			ft_str_is_printable(const char *str);
 
 #endif

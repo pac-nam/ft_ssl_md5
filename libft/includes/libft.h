@@ -21,7 +21,6 @@
 # include "print.h"
 # include "math.h"
 # include "colors.h"
-# include "malloc.h"
 # include "tab.h"
 
 #endif

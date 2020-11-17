@@ -13,7 +13,7 @@
 #ifndef CHAR_H
 # define CHAR_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);

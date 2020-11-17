@@ -177,15 +177,6 @@ COLOR_NAME	=	ft_blue.c				\
 				ft_red.c				\
 				ft_yellow.c				\
 
-MALLOC_FOLDER = malloc
-MALLOC_NAME	=	ft_malloc.c				\
-				ft_free.c				\
-				ft_realloc.c			\
-				ft_show_alloc_mem.c		\
-				ft_calloc.c				\
-				ft_reallocf.c			\
-				ft_malloc_good_size.c	\
-
 TAB_FOLDER = tab
 TAB_NAME = 		ft_free_tab.c			\
 				ft_tabnew.c				\
@@ -195,7 +186,7 @@ TAB_NAME = 		ft_free_tab.c			\
 SUBFOLDERS =	$(CONV_FOLDER) $(CHAR_FOLDER) $(MEMORY_FOLDER)	\
 				$(STR_FOLDER) $(LIST_FOLDER) $(PRINT_FOLDER)	\
 				$(MATH_FOLDER) $(PRINTF_FOLDER) $(COLOR_FOLDER)	\
-				$(MALLOC_FOLDER) $(TAB_FOLDER)					\
+				 $(TAB_FOLDER)									\
 
 CONV_C = $(addprefix $(CONV_FOLDER)/, $(CONV_NAME))
 CHAR_C = $(addprefix $(CHAR_FOLDER)/, $(CHAR_NAME))
@@ -206,7 +197,6 @@ PRINT_C = $(addprefix $(PRINT_FOLDER)/, $(PRINT_NAME))
 MATH_C = $(addprefix $(MATH_FOLDER)/, $(MATH_NAME))
 PRINTF_C = $(addprefix $(PRINTF_FOLDER)/, $(PRINTF_NAME))
 COLOR_C = $(addprefix $(COLOR_FOLDER)/, $(COLOR_NAME))
-MALLOC_C = $(addprefix $(MALLOC_FOLDER)/, $(MALLOC_NAME))
 TAB_C = $(addprefix $(TAB_FOLDER)/, $(TAB_NAME))
 
 SRC =	$(CONV_C) $(CHAR_C) $(MEMORY_C) $(STR_C)	\
