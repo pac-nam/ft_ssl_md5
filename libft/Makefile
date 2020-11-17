@@ -218,7 +218,7 @@ OBJ = $(addprefix $(OBJ_FOLDER)/, $(SRC:.c=.o))
 all : $(NAME)
 
 $(NAME): $(OBJ_FOLDER) $(OBJ)
-	@ar rc $@.a $(OBJ)
+	@ar rcs $@.a $(OBJ)
 	@ranlib $@.a
 	@echo "\033[32m[ ✔ ] $@ compiled\033[0m"
 

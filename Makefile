@@ -242,11 +242,12 @@ libft:
 clean:
 	@echo Cleaning $(NAME) [$(GREEN)√$(RESET)]
 	@rm -rf $(OBJSDIR)
-	@make FT_PRINTF=true clean -C $(LIBFTDIR)
+	@make clean -C $(LIBFTDIR)
 
 fclean: clean
-	@rm -rf $(NAME)
 	@echo Purge $(NAME) [$(GREEN)√$(RESET)]
+	@rm -rf $(NAME)
+	@make fclean -C $(LIBFTDIR)
 
 re: fclean all
 

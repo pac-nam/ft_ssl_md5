@@ -13,6 +13,7 @@
 #ifndef STR_H
 # define STR_H
 
+# include <stdarg.h>
 # include <wchar.h>
 
 int			ft_strcmp(const char *s1, const char *s2);
