@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ssl_md5.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ssl.h"
 
 void			init_struct(t_ssl *ssl)
@@ -11,7 +23,7 @@ void			init_struct(t_ssl *ssl)
 	ssl->line = NULL;
 }
 
-int 			ft_ssl_md5(t_ssl *ssl, int ac, char **av)
+int				ft_ssl_md5(t_ssl *ssl, int ac, char **av)
 {
 	int			i;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   md5.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ssl.h"
 #include <stdlib.h>
 
@@ -32,9 +44,9 @@ int			init_md5(uint8_t *str, t_md5 *md5, size_t size_line)
 	md5->msg_hash = NULL;
 	md5->file_hash = NULL;
 	if (size_line > 0)
-		md5->msg_hash = ft_strlen((char *)str) > 0 ? (char *)str: NULL;
+		md5->msg_hash = ft_strlen((char *)str) > 0 ? (char *)str : NULL;
 	else
-		md5->file_hash = ft_strlen((char *)str) > 0 ? (char *)str: NULL;
+		md5->file_hash = ft_strlen((char *)str) > 0 ? (char *)str : NULL;
 	md5->h0 = 0x67452301;
 	md5->h1 = 0xefcdab89;
 	md5->h2 = 0x98badcfe;
@@ -85,7 +97,8 @@ void		hash_md5(t_md5 *m, int i)
 	m->a = m->swap;
 }
 
-t_md5		*prepare_print(t_md5 *md5) {
+t_md5		*prepare_print(t_md5 *md5)
+{
 	if (!(md5->hash = ft_memalloc(33)))
 		return (NULL);
 	ft_utoa_base_no_malloc(revers_uint32(md5->h0), md5->hash, 16);
@@ -96,16 +109,15 @@ t_md5		*prepare_print(t_md5 *md5) {
 	return (md5);
 }
 
-t_md5 		*ft_md5(uint8_t *str, size_t size_line)
+t_md5		*ft_md5(uint8_t *str, size_t size_line)
 {
 	size_t	offset;
 	int		i;
 	t_md5	*md5;
 
 	offset = 0;
-	if (!(md5 = (t_md5 *)ft_memalloc(sizeof(t_md5))))
-		return (NULL);
-	if (!(init_md5(str, md5, size_line)))
+	if (!(md5 = (t_md5 *)ft_memalloc(sizeof(t_md5)))
+			|| !(init_md5(str, md5, size_line)))
 		return (NULL);
 	while (offset < md5->msg_len)
 	{

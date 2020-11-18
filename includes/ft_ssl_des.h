@@ -13,8 +13,6 @@
 #ifndef __FT_SSL_DES_H
 # define __FT_SSL_DES_H
 # define NO_SUCH_FILE "No such file or directory"
-# define FT_SSL_DES "des\ndes-ecb\ndes-cbc\ndes-ofb"
-# define FT_SSL_DES_3 "\ndes3\ndes3-ecb\ndes3-cbc\ndes3-ofb"
 # include "libft.h"
 # include <unistd.h>
 # define HEX "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"

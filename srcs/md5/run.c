@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   run.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ssl.h"
 
 int				go_hash(t_ssl *ssl)
 {
-	t_md5 		*md5;
+	t_md5		*md5;
 
 	if (ssl->digest & digest_md5)
 	{
@@ -77,7 +89,7 @@ static int		read_files(t_ssl *ssl)
 static int		ssl_md5(t_ssl *ssl)
 {
 	size_t		i;
-	t_md5 		*md5;
+	t_md5		*md5;
 
 	i = 0;
 	if (ssl->args & FLAG_p || (!(ssl->args & FLAG_s) && !ssl->files))

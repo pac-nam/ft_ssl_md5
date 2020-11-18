@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ssl_des.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ssl.h"
 #include "ft_ssl_des.h"
 
@@ -34,7 +46,7 @@ int				parser_des2(t_ssl_des *des, char **av, int *i)
 	return (1);
 }
 
-int 			parser_des(t_ssl_des *des, char **av)
+int				parser_des(t_ssl_des *des, char **av)
 {
 	int			i;
 
@@ -60,15 +72,6 @@ int 			parser_des(t_ssl_des *des, char **av)
 	return (1);
 }
 
-int				check_dependencies_arg(t_ssl_des *des)
-{
-	if (des->args & FLAG_DES_d && des->args & FLAG_DES_e)
-		return (help(NULL, 0));
-	if (!(des->args & FLAG_DES_e) && !(des->args & FLAG_DES_d))
-		des->args |= FLAG_DES_e;
-	return (1);
-}
-
 int				ft_ssl_des(t_ssl *ssl, char **av)
 {
 	t_ssl_des	des_struct;
@@ -76,8 +79,10 @@ int				ft_ssl_des(t_ssl *ssl, char **av)
 	init_struct_des(ssl, &des_struct);
 	if (!(parser_des(&des_struct, av)))
 		return (1);
-	if (!(check_dependencies_arg(&des_struct)))
-		return (1);
+	if (des_struct.args & FLAG_DES_d && des_struct.args & FLAG_DES_e)
+		return (help(NULL, 1));
+	if (!(des_struct.args & FLAG_DES_e) && !(des_struct.args & FLAG_DES_d))
+		des_struct.args |= FLAG_DES_e;
 	if (ssl->digest & digest_base64)
 		print_base64(&des_struct, base64(&des_struct, HEX));
 	return (0);
