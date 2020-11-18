@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   base64_encode.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "base64.h"
 
 static bool		init_base64(t_base64 *base64, uint8_t *str, size_t n, char *hex)
@@ -16,7 +28,7 @@ static bool		init_base64(t_base64 *base64, uint8_t *str, size_t n, char *hex)
 
 static char		*finish_base64(t_base64 *base64)
 {
-	char 		*ret;
+	char		*ret;
 
 	while (base64->pad_count < 3)
 	{
@@ -52,7 +64,6 @@ static void		process_base64(t_base64 *base64, size_t i)
 		base64->hash[base64->index++] = base64->hex[base64->h2];
 	if ((i + 2) < base64->msg_size)
 		base64->hash[base64->index++] = base64->hex[base64->h3];
-
 }
 
 char			*base64_encode(char *str, size_t size, char *hex)

@@ -1,5 +1,17 @@
-# include "base64.h"
-# include "ft_ssl_des.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   base64.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/21/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2019/22/08 17:53:19 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "base64.h"
+#include "ft_ssl_des.h"
 
 static void		bufferization(t_ssl_des *des, char *base64, size_t n)
 {
@@ -67,7 +79,7 @@ int				get_str_fd(int fd, char **line, size_t *size)
 	return (1);
 }
 
-static char 	*base64_for_flag_a(char *msg, size_t size, char *hex)
+static char		*base64_for_flag_a(char *msg, size_t size, char *hex)
 {
 	char		*ret;
 	char		*savemsg;

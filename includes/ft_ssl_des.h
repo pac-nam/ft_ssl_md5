@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ssl_des.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2018/05/19 12:33:50 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FT_SSL_DES_H
 # define __FT_SSL_DES_H
 # define NO_SUCH_FILE "No such file or directory"
@@ -7,18 +19,18 @@
 # include <unistd.h>
 # define HEX "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-typedef struct			s_ssl_des
+typedef struct	s_ssl_des
 {
-	short				args;
-	short				digest;
-	short				type;
-	int 				input_file_fd;
-	int 				output_file_fd;
-	int					break_hash;
-	uint64_t			key;
-	uint64_t			salt;
-	char				*vector;
-}						t_ssl_des;
+	short		args;
+	short		digest;
+	short		type;
+	int			input_file_fd;
+	int			output_file_fd;
+	int			break_hash;
+	uint64_t	key;
+	uint64_t	salt;
+	char		*vector;
+}				t_ssl_des;
 
 /*
 ** Flag ft_ssl_des

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ssl.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/08 13:54:05 by tbleuse           #+#    #+#             */
+/*   Updated: 2018/05/19 12:33:50 by tbleuse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FT_SSL_H
 # define __FT_SSL_H
 # define FT_SSL_MD5 "md5\nsha256\nsha1\nsha384\nsha512\nbase64"
-#if __APPLE__
-# define WRAP 0
-#elif __linux__
-# define WRAP 76
-#endif
+# if __APPLE__
+#  define WRAP 0
+# elif __linux__
+#  define WRAP 76
+# endif
 # include <stddef.h>
 # include <stdint.h>
 # include <fcntl.h>
@@ -105,7 +117,7 @@ typedef enum			e_type
 }						t_type;
 
 uint32_t				revers_uint32(uint32_t n);
-int 					ft_ssl_md5(t_ssl *ssl, int ac, char **av);
+int						ft_ssl_md5(t_ssl *ssl, int ac, char **av);
 int						core(int ac, char **av);
 int						add_files(t_ssl *ssl, char **av, int ac, int start);
 void					calcargs_s(char **av, t_ssl *ssl);
